@@ -1,0 +1,58 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: tigrinho_test
+  
+  redis:
+    host: localhost
+    port: 6379
+
+# Test-specific configurations
+logging:
+  level:
+    root: INFO
+    com.tigrinho: DEBUG
+    org.springframework: WARN
+    org.testcontainers: INFO
+    org.mongodb: INFO
+
+# Disable flyway/liquibase for tests
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration,org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration
+
+# Test-specific server configuration
+server:
+  port: 0  # Use random port for tests
+  servlet:
+    context-path: /api
+
+# Test-specific actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+    metrics:
+      enabled: true
+  health:
+    db:
+      enabled: true
+    redis:
+      enabled: true
+
+# Test-specific logging
+logging.pattern.console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+logging.level.org.springframework.web: WARN
+logging.level.com.tigrinho: DEBUG
+
+# Test properties
+test:
+  data:
+    path: classpath:test-data/
