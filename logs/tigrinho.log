@@ -1,0 +1,1477 @@
+2025-11-10 10:53:30.741 [main] INFO  c.t.slot.TigrinhoApplicationTests - Starting TigrinhoApplicationTests using Java 21.0.8 with PID 246966 (started by castilho in /home/castilho/projects/tigrinho)
+2025-11-10 10:53:30.743 [main] DEBUG c.t.slot.TigrinhoApplicationTests - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-11-10 10:53:30.744 [main] INFO  c.t.slot.TigrinhoApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-11-10 10:53:32.518 [main] INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-11-10 10:53:32.522 [main] INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-11-10 10:53:33.193 [main] INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-11-10 10:53:33.196 [main] INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-11-10 10:53:33.224 [main] INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.7
+  API Version: 1.43
+  Operating System: Ubuntu 24.04.3 LTS
+  Total Memory: 15584 MB
+2025-11-10 10:53:33.276 [main] INFO  tc.testcontainers/ryuk:0.5.1 - Pulling docker image: testcontainers/ryuk:0.5.1. Please be patient; this may take some time but only needs to be done once.
+2025-11-10 10:53:33.644 [main] INFO  o.t.utility.RegistryAuthLocator - Credential helper/store (docker-credential-desktop.exe) does not have credentials for https://index.docker.io/v1/
+2025-11-10 10:53:34.078 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:34.081 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (119s remaining)
+2025-11-10 10:53:34.515 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:34.516 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (118s remaining)
+2025-11-10 10:53:34.930 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:34.931 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (118s remaining)
+2025-11-10 10:53:35.316 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:35.317 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (117s remaining)
+2025-11-10 10:53:34.398 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:34.399 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (118s remaining)
+2025-11-10 10:53:34.782 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:34.783 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (118s remaining)
+2025-11-10 10:53:35.185 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:35.186 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (118s remaining)
+2025-11-10 10:53:35.588 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:35.588 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (117s remaining)
+2025-11-10 10:53:35.977 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:35.978 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (117s remaining)
+2025-11-10 10:53:36.362 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:36.363 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (116s remaining)
+2025-11-10 10:53:36.750 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:36.751 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (116s remaining)
+2025-11-10 10:53:37.116 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:37.117 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (116s remaining)
+2025-11-10 10:53:37.506 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:37.507 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (115s remaining)
+2025-11-10 10:53:37.890 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:37.891 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (115s remaining)
+2025-11-10 10:53:38.280 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:38.281 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (114s remaining)
+2025-11-10 10:53:38.653 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:38.654 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (114s remaining)
+2025-11-10 10:53:39.016 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:39.017 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (114s remaining)
+2025-11-10 10:53:39.376 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:39.378 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (113s remaining)
+2025-11-10 10:53:39.756 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:39.756 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (113s remaining)
+2025-11-10 10:53:40.117 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:40.118 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (113s remaining)
+2025-11-10 10:53:40.473 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:40.474 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (112s remaining)
+2025-11-10 10:53:40.871 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:40.872 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (112s remaining)
+2025-11-10 10:53:41.232 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:41.232 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (112s remaining)
+2025-11-10 10:53:41.595 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:41.596 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (111s remaining)
+2025-11-10 10:53:41.966 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:41.966 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (111s remaining)
+2025-11-10 10:53:42.335 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:42.335 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (110s remaining)
+2025-11-10 10:53:42.702 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:42.704 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (110s remaining)
+2025-11-10 10:53:43.068 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:43.069 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (110s remaining)
+2025-11-10 10:53:43.437 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:43.438 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (109s remaining)
+2025-11-10 10:53:43.845 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:43.846 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (109s remaining)
+2025-11-10 10:53:44.241 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:44.242 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (109s remaining)
+2025-11-10 10:53:44.608 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:44.609 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (108s remaining)
+2025-11-10 10:53:44.991 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:44.992 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (108s remaining)
+2025-11-10 10:53:45.351 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:45.352 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (107s remaining)
+2025-11-10 10:53:45.721 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:45.722 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (107s remaining)
+2025-11-10 10:53:46.090 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:46.090 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (107s remaining)
+2025-11-10 10:53:46.522 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:46.523 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (106s remaining)
+2025-11-10 10:53:46.880 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:46.881 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (106s remaining)
+2025-11-10 10:53:47.269 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:47.269 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (106s remaining)
+2025-11-10 10:53:48.661 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:48.662 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (104s remaining)
+2025-11-10 10:53:49.045 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:49.046 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (104s remaining)
+2025-11-10 10:53:49.421 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:49.422 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (103s remaining)
+2025-11-10 10:53:49.785 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:49.785 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (103s remaining)
+2025-11-10 10:53:50.151 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:50.152 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (103s remaining)
+2025-11-10 10:53:50.551 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:50.551 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (102s remaining)
+2025-11-10 10:53:50.933 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:50.934 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (102s remaining)
+2025-11-10 10:53:51.306 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:51.307 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (101s remaining)
+2025-11-10 10:53:51.695 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:51.696 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (101s remaining)
+2025-11-10 10:53:52.054 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:52.054 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (101s remaining)
+2025-11-10 10:53:52.414 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:52.415 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (100s remaining)
+2025-11-10 10:53:52.801 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:52.802 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (100s remaining)
+2025-11-10 10:53:53.169 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:53.170 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (100s remaining)
+2025-11-10 10:53:53.548 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:53.549 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (99s remaining)
+2025-11-10 10:53:53.929 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:53.930 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (99s remaining)
+2025-11-10 10:53:54.287 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:54.288 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (98s remaining)
+2025-11-10 10:53:54.664 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:54.664 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (98s remaining)
+2025-11-10 10:53:55.048 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:55.049 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (98s remaining)
+2025-11-10 10:53:55.418 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:55.419 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (97s remaining)
+2025-11-10 10:53:55.781 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:55.782 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (97s remaining)
+2025-11-10 10:53:56.156 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:56.157 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (97s remaining)
+2025-11-10 10:53:56.537 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:56.538 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (96s remaining)
+2025-11-10 10:53:56.907 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:56.907 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (96s remaining)
+2025-11-10 10:53:57.254 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:57.255 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (96s remaining)
+2025-11-10 10:53:57.634 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:57.635 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (95s remaining)
+2025-11-10 10:53:58.002 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:58.002 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (95s remaining)
+2025-11-10 10:53:58.392 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:58.393 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (94s remaining)
+2025-11-10 10:53:58.755 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:58.756 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (94s remaining)
+2025-11-10 10:53:59.111 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:59.111 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (94s remaining)
+2025-11-10 10:53:59.477 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:59.477 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (93s remaining)
+2025-11-10 10:53:59.833 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:53:59.833 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (93s remaining)
+2025-11-10 10:54:00.203 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:00.204 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (93s remaining)
+2025-11-10 10:54:00.564 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:00.564 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (92s remaining)
+2025-11-10 10:54:00.914 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:00.914 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (92s remaining)
+2025-11-10 10:54:01.264 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:01.265 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (92s remaining)
+2025-11-10 10:54:01.704 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:01.705 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (91s remaining)
+2025-11-10 10:54:02.083 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:02.084 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (91s remaining)
+2025-11-10 10:54:02.440 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:02.440 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (90s remaining)
+2025-11-10 10:54:02.786 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:02.786 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (90s remaining)
+2025-11-10 10:54:03.149 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:03.149 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (90s remaining)
+2025-11-10 10:54:03.510 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:03.510 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (89s remaining)
+2025-11-10 10:54:03.871 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:03.872 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (89s remaining)
+2025-11-10 10:54:04.290 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:04.291 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (88s remaining)
+2025-11-10 10:54:04.656 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:04.656 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (88s remaining)
+2025-11-10 10:54:05.043 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:05.044 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (88s remaining)
+2025-11-10 10:54:05.410 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:05.411 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (87s remaining)
+2025-11-10 10:54:05.790 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:05.791 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (87s remaining)
+2025-11-10 10:54:06.169 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:06.169 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (87s remaining)
+2025-11-10 10:54:06.540 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:06.541 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (86s remaining)
+2025-11-10 10:54:05.536 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:05.537 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (87s remaining)
+2025-11-10 10:54:06.905 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:06.905 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (86s remaining)
+2025-11-10 10:54:07.258 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:07.259 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (86s remaining)
+2025-11-10 10:54:07.626 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:07.627 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (85s remaining)
+2025-11-10 10:54:07.979 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:07.980 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (85s remaining)
+2025-11-10 10:54:08.340 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:08.341 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (84s remaining)
+2025-11-10 10:54:08.709 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:08.709 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (84s remaining)
+2025-11-10 10:54:09.065 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:09.065 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (84s remaining)
+2025-11-10 10:54:09.420 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:09.421 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (83s remaining)
+2025-11-10 10:54:09.800 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:09.800 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (83s remaining)
+2025-11-10 10:54:10.174 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:10.174 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (83s remaining)
+2025-11-10 10:54:10.530 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:10.530 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (82s remaining)
+2025-11-10 10:54:10.884 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:10.884 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (82s remaining)
+2025-11-10 10:54:11.237 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:11.238 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (82s remaining)
+2025-11-10 10:54:11.602 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:11.602 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (81s remaining)
+2025-11-10 10:54:11.956 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:11.957 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (81s remaining)
+2025-11-10 10:54:12.307 [docker-java-stream--248363753] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 10:54:12.307 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (80s remaining)
+2025-11-10 11:01:12.442 [main] INFO  c.t.slot.TigrinhoApplicationTests - Starting TigrinhoApplicationTests using Java 21.0.8 with PID 269550 (started by castilho in /home/castilho/projects/tigrinho)
+2025-11-10 11:01:12.443 [main] DEBUG c.t.slot.TigrinhoApplicationTests - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-11-10 11:01:12.444 [main] INFO  c.t.slot.TigrinhoApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-11-10 11:01:14.143 [main] INFO  o.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2025-11-10 11:01:14.146 [main] INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-11-10 11:01:14.375 [main] INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-11-10 11:01:14.637 [main] INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-11-10 11:01:14.638 [main] INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2025-11-10 11:01:14.668 [main] INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.7
+  API Version: 1.43
+  Operating System: Ubuntu 24.04.3 LTS
+  Total Memory: 15584 MB
+2025-11-10 11:01:14.706 [main] INFO  tc.testcontainers/ryuk:0.5.1 - Pulling docker image: testcontainers/ryuk:0.5.1. Please be patient; this may take some time but only needs to be done once.
+2025-11-10 11:01:15.150 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:15.152 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (119s remaining)
+2025-11-10 11:01:15.546 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:15.547 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (119s remaining)
+2025-11-10 11:01:15.939 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:15.940 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (118s remaining)
+2025-11-10 11:01:16.332 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:16.333 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (118s remaining)
+2025-11-10 11:01:16.741 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:16.742 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (117s remaining)
+2025-11-10 11:01:17.134 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:17.135 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (117s remaining)
+2025-11-10 11:01:17.534 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:17.534 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (117s remaining)
+2025-11-10 11:01:17.929 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:17.930 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (116s remaining)
+2025-11-10 11:01:18.335 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:18.335 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (116s remaining)
+2025-11-10 11:01:18.697 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": unauthorized: incorrect username or password"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:18.698 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (116s remaining)
+2025-11-10 11:01:17.687 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:17.688 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (117s remaining)
+2025-11-10 11:01:18.061 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:18.062 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (116s remaining)
+2025-11-10 11:01:18.428 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:18.429 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (116s remaining)
+2025-11-10 11:01:18.822 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:18.823 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (115s remaining)
+2025-11-10 11:01:19.208 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:19.209 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (115s remaining)
+2025-11-10 11:01:19.558 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:19.559 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (115s remaining)
+2025-11-10 11:01:19.930 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:19.931 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (114s remaining)
+2025-11-10 11:01:20.284 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:20.284 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (114s remaining)
+2025-11-10 11:01:20.656 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:20.656 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (114s remaining)
+2025-11-10 11:01:21.017 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:21.018 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (113s remaining)
+2025-11-10 11:01:21.374 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:21.375 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (113s remaining)
+2025-11-10 11:01:21.751 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:21.752 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (112s remaining)
+2025-11-10 11:01:22.117 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:22.118 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (112s remaining)
+2025-11-10 11:01:22.491 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:22.492 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (112s remaining)
+2025-11-10 11:01:22.847 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:22.848 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (111s remaining)
+2025-11-10 11:01:23.243 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:23.244 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (111s remaining)
+2025-11-10 11:01:23.595 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:23.596 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (111s remaining)
+2025-11-10 11:01:23.955 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:23.955 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (110s remaining)
+2025-11-10 11:01:24.352 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:24.353 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (110s remaining)
+2025-11-10 11:01:24.762 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:24.762 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (109s remaining)
+2025-11-10 11:01:25.116 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:25.117 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (109s remaining)
+2025-11-10 11:01:25.481 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:25.481 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (109s remaining)
+2025-11-10 11:01:25.838 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:25.839 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (108s remaining)
+2025-11-10 11:01:26.217 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:26.217 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (108s remaining)
+2025-11-10 11:01:26.572 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:26.573 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (108s remaining)
+2025-11-10 11:01:26.943 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:26.943 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (107s remaining)
+2025-11-10 11:01:27.327 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:27.327 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (107s remaining)
+2025-11-10 11:01:27.712 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:27.713 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (106s remaining)
+2025-11-10 11:01:28.071 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:28.072 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (106s remaining)
+2025-11-10 11:01:29.450 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:29.451 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (105s remaining)
+2025-11-10 11:01:29.821 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:29.822 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (104s remaining)
+2025-11-10 11:01:30.182 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:30.183 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (104s remaining)
+2025-11-10 11:01:30.542 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:30.542 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (104s remaining)
+2025-11-10 11:01:30.902 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:30.903 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (103s remaining)
+2025-11-10 11:01:31.279 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:31.279 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (103s remaining)
+2025-11-10 11:01:31.669 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:31.669 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (103s remaining)
+2025-11-10 11:01:32.048 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:32.048 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (102s remaining)
+2025-11-10 11:01:32.439 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:32.439 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (102s remaining)
+2025-11-10 11:01:32.811 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:32.812 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (101s remaining)
+2025-11-10 11:01:33.243 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:33.244 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (101s remaining)
+2025-11-10 11:01:33.626 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:33.627 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (101s remaining)
+2025-11-10 11:01:34.000 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:34.001 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (100s remaining)
+2025-11-10 11:01:34.385 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:34.385 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (100s remaining)
+2025-11-10 11:01:34.759 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:34.760 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (99s remaining)
+2025-11-10 11:01:35.124 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:35.125 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (99s remaining)
+2025-11-10 11:01:35.497 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:35.497 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (99s remaining)
+2025-11-10 11:01:35.883 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:35.884 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (98s remaining)
+2025-11-10 11:01:36.296 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:36.296 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (98s remaining)
+2025-11-10 11:01:36.709 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:36.710 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (97s remaining)
+2025-11-10 11:01:37.070 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:37.070 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (97s remaining)
+2025-11-10 11:01:37.427 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:37.427 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (97s remaining)
+2025-11-10 11:01:37.808 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:37.809 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (96s remaining)
+2025-11-10 11:01:38.184 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:38.185 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (96s remaining)
+2025-11-10 11:01:38.541 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:38.542 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (96s remaining)
+2025-11-10 11:01:38.918 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:38.919 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (95s remaining)
+2025-11-10 11:01:39.295 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:39.295 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (95s remaining)
+2025-11-10 11:01:39.678 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:39.679 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (95s remaining)
+2025-11-10 11:01:40.030 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:40.031 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (94s remaining)
+2025-11-10 11:01:40.401 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:40.402 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (94s remaining)
+2025-11-10 11:01:40.759 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:40.760 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (93s remaining)
+2025-11-10 11:01:41.198 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:41.198 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (93s remaining)
+2025-11-10 11:01:41.547 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:41.547 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (93s remaining)
+2025-11-10 11:01:41.990 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:41.990 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (92s remaining)
+2025-11-10 11:01:42.375 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:42.375 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (92s remaining)
+2025-11-10 11:01:42.850 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:42.850 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (91s remaining)
+2025-11-10 11:01:43.239 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:43.239 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (91s remaining)
+2025-11-10 11:01:43.622 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:43.622 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (91s remaining)
+2025-11-10 11:01:43.989 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:43.990 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (90s remaining)
+2025-11-10 11:01:44.359 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:44.359 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (90s remaining)
+2025-11-10 11:01:44.732 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:44.732 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (89s remaining)
+2025-11-10 11:01:45.129 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:45.130 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (89s remaining)
+2025-11-10 11:01:45.516 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:45.516 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (89s remaining)
+2025-11-10 11:01:45.873 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:45.873 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (88s remaining)
+2025-11-10 11:01:46.288 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:46.288 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (88s remaining)
+2025-11-10 11:01:46.655 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:46.655 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (88s remaining)
+2025-11-10 11:01:47.013 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:47.013 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (87s remaining)
+2025-11-10 11:01:47.387 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:47.388 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (87s remaining)
+2025-11-10 11:01:47.756 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:47.757 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (86s remaining)
+2025-11-10 11:01:48.126 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:48.127 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (86s remaining)
+2025-11-10 11:01:49.513 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:49.513 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (85s remaining)
+2025-11-10 11:01:49.870 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:49.871 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (84s remaining)
+2025-11-10 11:01:48.879 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:48.879 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (85s remaining)
+2025-11-10 11:01:49.233 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:49.234 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (85s remaining)
+2025-11-10 11:01:49.595 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:49.596 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (85s remaining)
+2025-11-10 11:01:49.960 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:49.960 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (84s remaining)
+2025-11-10 11:01:50.372 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:50.372 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (84s remaining)
+2025-11-10 11:01:50.735 [docker-java-stream-214475840] ERROR c.g.d.a.async.ResultCallbackTemplate - Error during callback
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: {"message":"Head \"https://registry-1.docker.io/v2/testcontainers/ryuk/manifests/0.5.1\": toomanyrequests: too many failed login attempts for username or IP address"}
+
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:247)
+	at org.testcontainers.shaded.com.github.dockerjava.core.DefaultInvocationBuilder.lambda$executeAndStream$1(DefaultInvocationBuilder.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-11-10 11:01:50.736 [main] WARN  tc.testcontainers/ryuk:0.5.1 - Retrying pull for image: testcontainers/ryuk:0.5.1 (83s remaining)
+2025-11-10 11:03:50.043 [main] INFO  c.tigrinho.slot.TigrinhoApplication - Starting TigrinhoApplication using Java 21.0.8 with PID 278285 (/home/castilho/projects/tigrinho/target/classes started by castilho in /home/castilho/projects/tigrinho)
+2025-11-10 11:03:50.046 [main] DEBUG c.tigrinho.slot.TigrinhoApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-11-10 11:03:50.047 [main] INFO  c.tigrinho.slot.TigrinhoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-10 11:03:51.586 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-10 11:03:51.586 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-11-10 11:03:51.677 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-11-10 11:03:52.708 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.9.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "6.6.87.2-microsoft-standard-WSL2"}, "platform": "Java/Oracle Corporation/21.0.8+12-LTS-jvmci-23.1-b72"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@1fca53a7], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@40dee07b, com.mongodb.Jep395RecordCodecProvider@21e39b82]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@5f9a8ddc], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2025-11-10 11:03:52.712 [cluster-ClusterId{value='69120ce8631ffe2fcfc272b3', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:73)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:204)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:199)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:159)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:82)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:68)
+	... 4 common frames omitted
+2025-11-10 11:03:53.197 [main] INFO  c.tigrinho.slot.TigrinhoApplication - Started TigrinhoApplication in 3.717 seconds (process running for 4.094)
+2025-11-10 11:15:11.514 [main] INFO  c.tigrinho.slot.TigrinhoApplication - Starting TigrinhoApplication using Java 21.0.8 with PID 315688 (/home/castilho/projects/tigrinho/target/classes started by castilho in /home/castilho/projects/tigrinho)
+2025-11-10 11:15:11.515 [main] DEBUG c.tigrinho.slot.TigrinhoApplication - Running with Spring Boot v3.1.5, Spring v6.0.13
+2025-11-10 11:15:11.516 [main] INFO  c.tigrinho.slot.TigrinhoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-10 11:15:11.755 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-10 11:15:11.756 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2025-11-10 11:15:11.854 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-11-10 11:15:12.900 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.9.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "6.6.87.2-microsoft-standard-WSL2"}, "platform": "Java/Oracle Corporation/21.0.8+12-LTS-jvmci-23.1-b72"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@105c6c9e], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@40a7974, com.mongodb.Jep395RecordCodecProvider@8d5da7e]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@65a4b9d6], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2025-11-10 11:15:12.924 [cluster-ClusterId{value='69120f903a36e733afc6a659', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=20312980}
+2025-11-10 11:15:13.241 [main] INFO  c.tigrinho.slot.TigrinhoApplication - Started TigrinhoApplication in 3.751 seconds (process running for 4.128)
