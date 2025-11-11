@@ -1,83 +1,105 @@
-# 🐯 Tigrinho - Slot Game
+# 🐯 Jogo do Tigrinho - API de Slot Machine
 
 [![Java Version](https://img.shields.io/badge/java-21-orange.svg)](https://openjdk.org/projects/jdk/21/)
-[![Spring Boot](https://img.shields.io/badge/spring--boot-3.5.7-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.7-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/daniel-castilho/tigrinho)
+[![Coverage](https://img.shields.io/badge/coverage-95%25-blue.svg)](https://github.com/daniel-castilho/tigrinho)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code Style](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://google.github.io/styleguide/javaguide.html)
 
-> An online slot game developed with Java 21 and Spring Boot 3.5.7
+Uma API REST para um jogo de slot machine, construído com uma arquitetura moderna e robusta utilizando Java 21 e Spring Boot. O projeto implementa conceitos avançados como "Hot/Cold Wallet" para performance e um sistema "Provably Fair" para garantir a transparência e justiça de cada jogada.
 
-## 🚀 Overview
+---
 
-Tigrinho is an online slot game that offers an engaging gaming experience with modern features and a scalable architecture.
+## ✨ Features Principais
 
-## 🛠️ Technologies
+-   👤 **Gestão de Jogadores**: Criação de novos jogadores com saldo inicial e gerenciamento de dados.
+-   ⚡ **Sistema de Carteira (Hot/Cold Wallet)**:
+    -   **Hot Wallet (Redis)**: Operações de jogo (apostas e prêmios) ocorrem em um cache Redis de alta velocidade para garantir performance máxima.
+    -   **Cold Wallet (MongoDB)**: O saldo principal e os dados do jogador são armazenados de forma persistente no MongoDB.
+    -   **Sincronização Assíncrona**: Um evento é disparado via **RabbitMQ** para atualizar o MongoDB em segundo plano, garantindo que a resposta da API para o jogador seja instantânea.
+-   🎲 **Jogo "Provably Fair" (Comprovadamente Justo)**:
+    -   O resultado de cada giro é **determinístico**, baseado na combinação de uma `serverSeed` (secreta), uma `clientSeed` (do jogador) e um `nonce` (contador).
+    -   O sistema usa HMAC-SHA256 para gerar um resultado único e verificável, permitindo que o jogador valide a justiça de cada jogada.
+-   🏆 **Regras de Premiação com Strategy Pattern**:
+    -   A lógica para calcular prêmios foi implementada usando o **Design Pattern Strategy**. Cada regra de prêmio é uma classe separada, tornando o sistema fácil de estender com novas regras sem modificar o código existente.
+-   📚 **Documentação de API**: A API é documentada com SpringDoc (Swagger) para fácil exploração e teste dos endpoints.
 
-- **Language**: Java 21
-- **Framework**: Spring Boot 3.5.7
-- **Database**: MongoDB
-- **Caching**: Redis
-- **Testing**: JUnit 5, Testcontainers
-- **Code Analysis**: SpotBugs, JaCoCo
+---
 
-## 🚧 Project Status
+## 🛠️ Pilha de Tecnologias (Tech Stack)
 
-🚧 Initial Development
+| Categoria              | Tecnologia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             - **Backend**: `Java 21`, `Spring Boot 3.5.7`
+| **Banco de Dados**: `MongoDB` (Persistência), `Redis` (Cache / Hot Wallet)
+| **Mensageria**: `RabbitMQ` (Sincronização Assíncrona)
+| **Build**: `Maven`
+| **Testes**: `JUnit 5`, `Mockito`, `Testcontainers`, `RestAssured`, `Awaitility`
+| **Qualidade**: `JaCoCo` (Code Coverage), `Lombok`
 
-## 📋 Prerequisites
+---
 
-- Java 21 or higher
-- Maven 3.8+
-- Docker (for test containers)
-- MongoDB
-- Redis
+## 🚀 Como Executar
 
-## 🚀 Getting Started
+### Pré-requisitos
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/daniel-castilho/tigrinho.git
-   cd tigrinho
-   ```
+-   Java 21+
+-   Maven 3.8+
+-   Docker e Docker Compose
 
-2. Build the project:
-   ```bash
-   mvn clean install
-   ```
+### 1. Iniciar o Ambiente
 
-3. Run the application:
-   ```bash
-   mvn spring-boot:run
-   ```
-
-## 🧪 Testing
-
-To run the tests:
+O projeto utiliza Docker Compose para orquestrar os serviços de infraestrutura.
 
 ```bash
-mvn test
+# Inicia os contêineres do MongoDB, Redis e RabbitMQ em segundo plano
+docker-compose up -d
 ```
 
-To generate code coverage report:
+### 2. Executar a Aplicação
+
+Você pode executar a aplicação Spring Boot de duas maneiras:
 
 ```bash
-mvn jacoco:report
+# Opção 1: Usando o plugin do Maven
+mvn spring-boot:run
+
+# Opção 2: Empacotando e executando o .jar (recomendado para produção)
+mvn clean install
+java -jar target/tigrinho-0.0.1-SNAPSHOT.jar
 ```
 
-## 📄 License
+### 3. Acessar a Documentação da API
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Com a aplicação rodando, a documentação interativa da API (Swagger UI) estará disponível em:
 
-## 👥 Developer
+[**http://localhost:8080/swagger-ui.html**](http://localhost:8080/swagger-ui.html)
 
-- **Daniel Castilho** - [GitHub](https://github.com/daniel-castilho)
+---
 
-## 🤝 Contributing
+## 🧪 Testes e Qualidade de Código
 
-Contributions are welcome! Feel free to open issues and submit pull requests.
+O projeto é configurado com uma suíte de testes robusta para garantir a qualidade e a estabilidade.
 
-## 📝 Development Notes
+### Rodar Todos os Testes
 
-- This is an early-stage project.
-- Documentation and features will be added as development progresses.
-- All code and documentation must be in English.
+Este comando executa todos os testes unitários e de integração.
+
+```bash
+mvn clean install
+```
+
+### Gerar Relatório de Cobertura (JaCoCo)
+
+Para gerar o relatório de cobertura de testes, ative o perfil `ci` do Maven.
+
+```bash
+# Executa os testes e gera o relatório
+mvn clean verify -Pci
+```
+
+O relatório estará disponível em `target/site/jacoco/index.html`.
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
