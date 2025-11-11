@@ -1,283 +1,374 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.5</version>
-		<relativePath/>
-	</parent>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.7</version>
+        <relativePath/>
+    </parent>
 
-	<groupId>com.tigrinho</groupId>
-	<artifactId>tigrinho</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Tigrinho</name>
-	<description>Jogo do Tigrinho - Uma aplicação de jogo de slot</description>
-	<url>https://github.com/daniel-castilho/tigrinho</url>
+    <groupId>com.tigrinho</groupId>
+    <artifactId>tigrinho</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Tigrinho</name>
+    <description>Tigrinho Slot Game - A slot game application REST API</description>
+    <url>https://github.com/daniel-castilho/tigrinho</url>
 
-	<licenses>
-		<license>
-			<name>MIT License</name>
-			<url>https://opensource.org/licenses/MIT</url>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
 
-	<developers>
-		<developer>
-			<name>Daniel Castilho</name>
-			<email>seu.email@exemplo.com</email>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Daniel Castilho</name>
+            <email>seu.email@exemplo.com</email>
+        </developer>
+    </developers>
 
-	<scm>
-		<connection>scm:git:git@github.com:daniel-castilho/tigrinho.git</connection>
-		<developerConnection>scm:git:git@github.com:daniel-castilho/tigrinho.git</developerConnection>
-		<url>https://github.com/daniel-castilho/tigrinho</url>
-	</scm>
+    <scm>
+        <connection>scm:git:git@github.com:daniel-castilho/tigrinho.git</connection>
+        <developerConnection>scm:git:git@github.com:daniel-castilho/tigrinho.git</developerConnection>
+        <url>https://github.com/daniel-castilho/tigrinho</url>
+    </scm>
 
-	<properties>
-		<!-- Java and Build -->
-		<java.version>21</java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<lombok.version>1.18.30</lombok.version>
+    <properties>
+        <!-- Java and Build Properties -->
+        <java.version>21</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
 
-		<!-- Dependencies -->
-		<springdoc.version>2.2.0</springdoc.version>
-		<testcontainers.version>1.19.3</testcontainers.version>
-		<mapstruct.version>1.5.5.Final</mapstruct.version>
-		<lombok.mapstruct-binding.version>0.2.0</lombok.mapstruct-binding.version>
+        <!-- Dependency Versions -->
+        <lombok.version>1.18.30</lombok.version>
+        <springdoc.version>2.2.0</springdoc.version>
+        <testcontainers.version>1.19.3</testcontainers.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <lombok.mapstruct-binding.version>0.2.0</lombok.mapstruct-binding.version>
+        <awaitility.version>4.2.0</awaitility.version>
 
-		<!-- Plugins -->
-		<jacoco.version>0.8.10</jacoco.version>
-		<spotbugs.version>4.8.3</spotbugs.version>
-		<spotless.version>2.41.0</spotless.version>
-		<google-java-format.version>1.17.0</google-java-format.version>
-		<sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+        <!-- Plugin Versions -->
+        <jacoco.version>0.8.11</jacoco.version>
+        <spotbugs.version>4.8.3</spotbugs.version>
+        <spotless.version>2.41.0</spotless.version>
+        <google-java-format.version>1.17.0</google-java-format.version>
+        <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+        <maven-surefire.version>3.2.5</maven-surefire.version>
+        <maven-failsafe.version>3.2.5</maven-failsafe.version>
 
-		<skipTests>true</skipTests>
-	</properties>
+        <!-- Test Configuration -->
+        <skipTests>false</skipTests> <!-- Set to true to skip all tests -->
+    </properties>
 
-	<dependencies>
-		<!-- Spring Boot Starter -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+    <dependencies>
+        <!-- Spring Boot Core Starters -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
-		<!-- MongoDB -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
+        <!-- Data Persistence & Messaging -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
 
-		<!-- Redis -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
-		</dependency>
+        <!-- Development & Utility Tools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${springdoc.version}</version>
+        </dependency>
 
-		<!-- Lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-			<scope>provided</scope>
-		</dependency>
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-testcontainers</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>mongodb</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>rabbitmq</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>${awaitility.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-		<!-- MapStruct -->
-		<dependency>
-			<groupId>org.mapstruct</groupId>
-			<artifactId>mapstruct</artifactId>
-			<version>${mapstruct.version}</version>
-		</dependency>
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin: Configures Java compiler settings -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>${lombok.mapstruct-binding.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>-Amapstruct.defaultComponentModel=spring</arg>
+                        <arg>-Xlint:all</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
 
-		<!-- SpringDoc OpenAPI -->
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>${springdoc.version}</version>
-		</dependency>
+            <!-- Spring Boot Maven Plugin: Packages the application into an executable JAR -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
 
-		<!-- Test Dependencies -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-testcontainers</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>${testcontainers.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>mongodb</artifactId>
-			<version>${testcontainers.version}</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+            <!-- Spotless Maven Plugin: Enforces code formatting standards -->
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>${spotless.version}</version>
+                <configuration>
+                    <java>
+                        <googleJavaFormat>
+                            <version>${google-java-format.version}</version>
+                            <style>GOOGLE</style>
+                        </googleJavaFormat>
+                        <removeUnusedImports/>
+                        <importOrder>
+                            <order>java,javax,org,com,${project.groupId}</order>
+                        </importOrder>
+                    </java>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>apply</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-	<build>
-		<plugins>
-			<!-- Maven Compiler Plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-							<version>${lombok.version}</version>
-						</path>
-						<path>
-							<groupId>org.mapstruct</groupId>
-							<artifactId>mapstruct-processor</artifactId>
-							<version>${mapstruct.version}</version>
-						</path>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok-mapstruct-binding</artifactId>
-							<version>${lombok.mapstruct-binding.version}</version>
-						</path>
-					</annotationProcessorPaths>
-					<compilerArgs>
-						<arg>-Amapstruct.defaultComponentModel=spring</arg>
-						<arg>-Xlint:all</arg>
-					</compilerArgs>
-				</configuration>
-			</plugin>
+            <!-- Maven Surefire Plugin: Executes unit tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*IT.java</exclude> <!-- Exclude integration tests -->
+                    </excludes>
+                </configuration>
+            </plugin>
 
-			<!-- Spring Boot Maven Plugin -->
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
+            <!-- Maven Failsafe Plugin: Executes integration tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-			<!-- Spotless for code formatting -->
-			<plugin>
-				<groupId>com.diffplug.spotless</groupId>
-				<artifactId>spotless-maven-plugin</artifactId>
-				<version>${spotless.version}</version>
-				<configuration>
-					<java>
-						<googleJavaFormat>
-							<version>${google-java-format.version}</version>
-							<style>GOOGLE</style>
-						</googleJavaFormat>
-						<removeUnusedImports />
-						<importOrder>
-							<order>java,javax,org,com,${project.groupId}</order>
-						</importOrder>
-					</java>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>apply</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			            <!-- Checkstyle (Disabled) -->
+            <!-- Maven Checkstyle Plugin: Performs static code analysis (currently skipped) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
-                    <skip>true</skip>
+                    <skip>true</skip> <!-- Skipping Checkstyle for now -->
                 </configuration>
             </plugin>
 
-			<!-- SpotBugs Plugin - Temporarily disabled due to dependency resolution issues
-			<plugin>
-				<groupId>com.github.spotbugs</groupId>
-				<artifactId>spotbugs-maven-plugin</artifactId>
-				<dependencies>
-					<dependency>
-						<groupId>com.github.spotbugs</groupId>
-						<artifactId>spotbugs</artifactId>
-						<version>${spotbugs.version}</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<failOnError>true</failOnError>
-					<includeTests>true</includeTests>
-				</configuration>
-			</plugin>
-			-->
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
-	<profiles>
-		<profile>
-			<id>ci</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.jacoco</groupId>
-						<artifactId>jacoco-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>prepare-agent</id>
-								<goals>
-									<goal>prepare-agent</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>report</id>
-								<goals>
-									<goal>report</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+    <profiles>
+        <!-- CI Profile: Activates JaCoCo for code coverage reporting -->
+        <profile>
+            <id>ci</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>${jacoco.version}</version>
+                        <configuration>
+                            <excludes>
+                                <!-- Exclude generated code by Lombok -->
+                                <exclude>**/lombok/Generated.class</exclude>
+                                <!-- Exclude configuration classes -->
+                                <exclude>**/config/**/*.class</exclude>
+                                <!-- Exclude main application class -->
+                                <exclude>**/TigrinhoApplication.class</exclude>
+                                <!-- Exclude model/DTO/entity classes -->
+                                <exclude>**/model/**/*.class</exclude>
+                                <!-- Exclude exception classes -->
+                                <exclude>**/exception/**/*.class</exclude>
+                                <!-- Exclude MapStruct generated mappers -->
+                                <exclude>**/mapper/*MapperImpl.class</exclude>
+                                <!-- Exclude Health Indicators (often simple beans) -->
+                                <exclude>**/health/**/*.class</exclude>
+                            </excludes>
+                        </configuration>
+                        <executions>
+                            <!-- Prepares JaCoCo agent for unit tests -->
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                                <configuration>
+                                    <destFile>${project.build.directory}/jacoco.exec</destFile>
+                                </configuration>
+                            </execution>
+                            <!-- Prepares JaCoCo agent for integration tests -->
+                            <execution>
+                                <id>prepare-agent-it</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                                <configuration>
+                                    <destFile>${project.build.directory}/jacoco-it.exec</destFile>
+                                </configuration>
+                            </execution>
+                            <!-- Merges unit and integration test coverage reports -->
+                            <execution>
+                                <id>merge-reports</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>merge</goal>
+                                </goals>
+                                <configuration>
+                                    <fileSets>
+                                        <fileSet>
+                                            <directory>${project.build.directory}</directory>
+                                            <includes>
+                                                <include>*.exec</include>
+                                            </includes>
+                                        </fileSet>
+                                    </fileSets>
+                                    <destFile>${project.build.directory}/jacoco-merged.exec</destFile>
+                                </configuration>
+                            </execution>
+                            <!-- Generates the final HTML coverage report -->
+                            <execution>
+                                <id>report</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                                <configuration>
+                                    <dataFile>${project.build.directory}/jacoco-merged.exec</dataFile>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
