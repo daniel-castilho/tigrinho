@@ -1,6 +1,18 @@
 spring:
   application:
     name: tigrinho
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_PASSWORD:guest}
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 2s
+          max-interval: 10s
+          multiplier: 2
 
   # MongoDB Configuration
   data:
@@ -19,8 +31,6 @@ spring:
 # Server Configuration
 server:
   port: 8080
-  servlet:
-    context-path: /api
   error:
     include-message: always
     include-binding-errors: always
@@ -68,3 +78,12 @@ tigrinho:
   app:
     version: 0.0.1-SNAPSHOT
     description: Tigrinho Slot Game API
+
+# RabbitMQ Naming
+rabbitmq:
+  queue:
+    name: wallet.sync.queue
+  exchange:
+    name: wallet.sync.exchange
+  routing:
+    key: wallet.sync.key
