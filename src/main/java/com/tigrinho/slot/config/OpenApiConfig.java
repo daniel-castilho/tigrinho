@@ -15,6 +15,11 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
+/**
+ * Configuration class for OpenAPI (Swagger) documentation.
+ * This class sets up the API documentation details, security schemes,
+ * and defines different API groups for better organization.
+ */
 @Configuration
 public class OpenApiConfig {
 
@@ -24,6 +29,12 @@ public class OpenApiConfig {
     @Value("${tigrinho.app.description:REST API for Tigrinho Slot Game}")
     private String appDescription;
 
+    /**
+     * Configures the main OpenAPI bean with global information,
+     * server details, and security schemes.
+     *
+     * @return A customized {@link OpenAPI} object.
+     */
     @Bean
     public OpenAPI tigrinhoOpenAPI() {
         final String securitySchemeName = "bearerAuth";
@@ -55,6 +66,12 @@ public class OpenApiConfig {
                         .termsOfService("https://tigrinho.com/terms"));
     }
 
+    /**
+     * Defines a grouped API for public endpoints.
+     * Paths matching "/api/public/**" will be included in this group.
+     *
+     * @return A {@link GroupedOpenApi} instance for public APIs.
+     */
     @Bean
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
@@ -63,6 +80,13 @@ public class OpenApiConfig {
                 .build();
     }
 
+    /**
+     * Defines a grouped API for admin-specific endpoints.
+     * Paths matching "/api/admin/**" will be included in this group,
+     * with a custom info section for the admin API.
+     *
+     * @return A {@link GroupedOpenApi} instance for admin APIs.
+     */
     @Bean
     public GroupedOpenApi adminApi() {
         return GroupedOpenApi.builder()
