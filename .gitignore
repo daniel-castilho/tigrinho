@@ -5,6 +5,7 @@ target/
 !**/src/test/**/target/
 log.txt
 projeto-codigos.txt
+*.log
 
 ### STS ###
 .apt_generated
