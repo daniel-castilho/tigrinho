@@ -10,13 +10,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TigrinhoApplication {
 
-	/**
-	 * The main method that starts the Spring Boot application.
-	 *
-	 * @param args Command line arguments passed to the application.
-	 */
-	public static void main(final String[] args) {
-		SpringApplication.run(TigrinhoApplication.class, args);
-	}
+    /**
+     * The main method that starts the Spring Boot application.
+     *
+     * @param args Command line arguments passed to the application.
+     */
+    public static void main(final String[] args) {
+        SpringApplication.run(TigrinhoApplication.class, args);
+    }
 
 }

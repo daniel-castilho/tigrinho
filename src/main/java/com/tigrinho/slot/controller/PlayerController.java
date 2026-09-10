@@ -83,7 +83,7 @@ public class PlayerController {
      * Performs a game spin for a specific player with a given bet amount.
      *
      * @param playerId The unique identifier of the player.
-     * @param request The {@link SpinRequest} containing the bet amount.
+     * @param request  The {@link SpinRequest} containing the bet amount.
      * @return A {@link ResponseEntity} with the {@link SpinResponse} and HTTP status 200.
      */
     @Operation(summary = "Perform a game spin")
@@ -128,7 +128,7 @@ public class PlayerController {
      * This action typically resets the nonce to 0.
      *
      * @param playerId The unique identifier of the player.
-     * @param request The {@link UpdateSeedsRequest} containing the new client seed.
+     * @param request  The {@link UpdateSeedsRequest} containing the new client seed.
      * @return A {@link ResponseEntity} with the {@link ChangeSeedsResponse} and HTTP status 200.
      */
     @Operation(summary = "Change player's seeds (clientSeed and serverSeed)")

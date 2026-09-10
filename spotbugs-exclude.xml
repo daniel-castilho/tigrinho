@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Suprimir NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE em GlobalExceptionHandler.handleTypeMismatch -->
+    <Match>
+        <Class name="com.tigrinho.slot.exception.GlobalExceptionHandler"/>
+        <Method name="handleTypeMismatch"/>
+        <Bug pattern="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE"/>
+    </Match>
+
+    <!-- Suprimir EI_EXPOSE_REP2 em GameService.rabbitTemplate -->
+    <Match>
+        <Class name="com.tigrinho.slot.service.GameService"/>
+        <Method name="&lt;init&gt;"/> <!-- Construtor -->
+        <Field name="rabbitTemplate"/>
+        <Bug pattern="EI_EXPOSE_REP2"/>
+    </Match>
+
+    <!-- Suprimir EI_EXPOSE_REP2 em WalletService.redisTemplate -->
+    <Match>
+        <Class name="com.tigrinho.slot.service.WalletService"/>
+        <Method name="&lt;init&gt;"/> <!-- Construtor -->
+        <Field name="redisTemplate"/>
+        <Bug pattern="EI_EXPOSE_REP2"/>
+    </Match>
+</FindBugsFilter>

@@ -3,16 +3,16 @@ package com.tigrinho.slot.service;
 import com.tigrinho.slot.model.entity.Player;
 import com.tigrinho.slot.repository.PlayerRepository;
 import com.tigrinho.slot.service.strategy.WinStrategy;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,11 +31,24 @@ class RNGServiceTest {
     private PlayerRepository playerRepository;
     @Mock
     private CryptoService cryptoService;
-    @Mock
-    private List<WinStrategy> winStrategies; // Mock of the list of strategies
 
-    @InjectMocks
     private RNGService rngService;
+    private WinStrategy mockWinStrategy; // Declare the mock strategy here
+
+    @BeforeEach // Initialize rngService before each test
+    void setUp() {
+        // 1. Create a mock WinStrategy
+        mockWinStrategy = mock(WinStrategy.class);
+        // 2. Create a real List containing the mock WinStrategy
+        List<WinStrategy> realWinStrategies = new ArrayList<>();
+        realWinStrategies.add(mockWinStrategy);
+
+        // 3. Pass this real list to the RNGService constructor
+        rngService = new RNGService(realWinStrategies, cryptoService, playerRepository);
+
+        // 4. Stub the mockWinStrategy.matches() method
+        when(mockWinStrategy.matches(any())).thenReturn(false);
+    }
 
     /**
      * Tests that {@link RNGService#generateSpinResult(String, BigDecimal)} produces
@@ -47,7 +60,7 @@ class RNGServiceTest {
     void generateSpinResult_shouldBeDeterministicAndIncrementNonce() {
         // Given
         final String playerId = "player1";
-        final BigDecimal betAmount = new BigDecimal("10");
+        final BigDecimal betAmount = BigDecimal.TEN;
 
         // 1. Configure the player with known seeds and nonce
         final Player player = Player.builder()
@@ -63,13 +76,6 @@ class RNGServiceTest {
         // Pre-calculated hash for the test. Starts with '0' to force the first symbol.
         final String knownHmac = "0000000011111111222222223333333344444444555555556666666677777777";
         when(cryptoService.hmac("known-server-seed", dataForHmac)).thenReturn(knownHmac);
-
-        // 3. Configure the mock list of strategies to find none (no win)
-        // We use a mock of the interface to simulate the stream behavior
-        @SuppressWarnings("unchecked")
-        final WinStrategy mockStrategy = mock(WinStrategy.class);
-        when(winStrategies.stream()).thenReturn(List.of(mockStrategy).stream());
-        when(mockStrategy.matches(any())).thenReturn(false);
 
         // When
         final RNGService.SpinResult result = rngService.generateSpinResult(playerId, betAmount);

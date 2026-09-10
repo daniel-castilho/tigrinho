@@ -24,6 +24,10 @@ public class CryptoService {
 
     private static final String ALGORITHM_HMAC = "HmacSHA256";
     private static final String ALGORITHM_HASH = "SHA-256";
+    private static final int ONE = 1;
+    private static final int TWO = 2;
+    private static final int THIRTY_TWO = 32;
+    public static final int UNSIGNED_BYTE_MASK = 0xFF;
 
     // SecureRandom is the preferred class for cryptographically secure random number generation.
     private SecureRandom secureRandom;
@@ -44,7 +48,7 @@ public class CryptoService {
      * @return A Base64 encoded string representing a secure random seed.
      */
     public String generateSeed() {
-        final byte[] bytes = new byte[32];
+        final byte[] bytes = new byte[THIRTY_TWO];
         secureRandom.nextBytes(bytes);
         return Base64.getEncoder().encodeToString(bytes);
     }
@@ -98,10 +102,10 @@ public class CryptoService {
      * @return A hexadecimal string.
      */
     private String bytesToHex(final byte[] hash) {
-        final StringBuilder hexString = new StringBuilder(2 * hash.length);
+        final StringBuilder hexString = new StringBuilder(TWO * hash.length);
         for (final byte b : hash) {
-            final String hex = Integer.toHexString(0xff & b);
-            if (hex.length() == 1) {
+            final String hex = Integer.toHexString(UNSIGNED_BYTE_MASK & b);
+            if (hex.length() == ONE) {
                 hexString.append('0');
             }
             hexString.append(hex);

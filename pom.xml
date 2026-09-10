@@ -60,6 +60,11 @@
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <maven-surefire.version>3.2.5</maven-surefire.version>
         <maven-failsafe.version>3.2.5</maven-failsafe.version>
+        <maven-checkstyle.version>3.3.0</maven-checkstyle.version>
+        <maven-pmd.version>3.28.0</maven-pmd.version>
+        <pmd.tool.version>7.17.0</pmd.tool.version>
+        <spotbugs-maven.version>4.8.3.0</spotbugs-maven.version>
+
 
         <!-- Test Configuration -->
         <skipTests>false</skipTests> <!-- Set to true to skip all tests -->
@@ -99,12 +104,6 @@
         </dependency>
 
         <!-- Development & Utility Tools -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -272,13 +271,83 @@
                 </executions>
             </plugin>
 
-            <!-- Maven Checkstyle Plugin: Performs static code analysis (currently skipped) -->
+            <!-- Maven Checkstyle Plugin: Performs static code analysis -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>${maven-checkstyle.version}</version>
                 <configuration>
-                    <skip>true</skip> <!-- Skipping Checkstyle for now -->
+                    <configLocation>checkstyle.xml</configLocation> <!-- Path to your Checkstyle rules -->
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError> <!-- Fail the build on Checkstyle violations -->
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Maven PMD Plugin: Performs static code analysis -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${maven-pmd.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sourceforge.pmd</groupId>
+                        <artifactId>pmd-java</artifactId>
+                        <version>${pmd.tool.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <rulesets>
+                        <ruleset>/rulesets/java/maven-pmd-plugin-default.xml</ruleset> <!-- Default PMD rules -->
+                    </rulesets>
+                    <failOnViolation>false</failOnViolation> <!-- Temporarily set to false to see all violations -->
+                    <printFailingErrors>true</printFailingErrors>
+                    <includeTests>true</includeTests>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- SpotBugs Maven Plugin: Performs static code analysis for potential bugs -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${spotbugs-maven.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>${spotbugs.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <failOnError>true</failOnError>
+                    <includeTests>true</includeTests>
+                    <!-- Add this line to reference the exclusion file -->
+                    <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
                 </configuration>
             </plugin>
 

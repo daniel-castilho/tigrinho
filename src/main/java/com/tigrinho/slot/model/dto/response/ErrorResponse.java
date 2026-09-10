@@ -2,19 +2,20 @@ package com.tigrinho.slot.model.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Standardized error response DTO for API errors.
  * This class provides a consistent structure for error messages returned by the API.
  */
-@Data
+@Getter // Use @Getter instead of @Data to manually implement constructor and specific getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorResponse {
-    
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private final LocalDateTime timestamp;
     private final int status;
@@ -31,11 +32,18 @@ public class ErrorResponse {
      * @param path The request URI that caused the error.
      * @param details A map containing additional details about the error, if any.
      */
-    public ErrorResponse(final LocalDateTime timestamp, final int status, final String message, final String path, final Map<String, Object> details) {
+    public ErrorResponse(final LocalDateTime timestamp, final int status, final String message, final String path,
+                         final Map<String, Object> details) {
         this.timestamp = timestamp;
         this.status = status;
         this.message = message;
         this.path = path;
-        this.details = details;
+        // Defensive copy for mutable map
+        this.details = (details != null) ? Collections.unmodifiableMap(new HashMap<>(details)) : null;
+    }
+
+    // Custom getter for details to return a defensive copy
+    public Map<String, Object> getDetails() {
+        return (details != null) ? new HashMap<>(details) : null;
     }
 }

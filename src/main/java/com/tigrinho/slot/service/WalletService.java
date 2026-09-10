@@ -46,9 +46,9 @@ public class WalletService {
      * in a negative balance, the operation is reverted, and an exception is thrown.
      *
      * @param playerId The unique identifier of the player.
-     * @param amount The amount to debit.
+     * @param amount   The amount to debit.
      * @throws InsufficientFundsException if the player does not have enough funds.
-     * @throws ResourceNotFoundException if the player is not found when loading from MongoDB.
+     * @throws ResourceNotFoundException  if the player is not found when loading from MongoDB.
      */
     public void debit(final String playerId, final BigDecimal amount) {
         final long amountInCents = bigDecimalToCents(amount);
@@ -60,9 +60,11 @@ public class WalletService {
         // Atomic DECRBY operation:
         final Long newBalance = redisTemplate.opsForValue().decrement(key, amountInCents);
 
-        if (newBalance < 0) {
+        if (newBalance == null || newBalance < 0) { // Check for null BEFORE checking negativity
             // If it became negative, the debit failed. Revert the operation.
-            redisTemplate.opsForValue().increment(key, amountInCents); // Revert
+            if (newBalance != null) {
+                redisTemplate.opsForValue().increment(key, amountInCents); // Revert
+            }
             throw new InsufficientFundsException(playerId);
         }
 
@@ -75,7 +77,7 @@ public class WalletService {
      * Ensures the balance exists in Redis before crediting.
      *
      * @param playerId The unique identifier of the player.
-     * @param amount The amount to credit.
+     * @param amount   The amount to credit.
      * @throws ResourceNotFoundException if the player is not found when loading from MongoDB.
      */
     public void credit(final String playerId, final BigDecimal amount) {

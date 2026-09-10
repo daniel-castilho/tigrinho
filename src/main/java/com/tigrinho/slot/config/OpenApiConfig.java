@@ -38,7 +38,6 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI tigrinhoOpenAPI() {
         final String securitySchemeName = "bearerAuth";
-        
         return new OpenAPI()
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(new Components()

@@ -12,6 +12,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -25,7 +26,7 @@ public class GlobalExceptionHandler {
     /**
      * Handles {@link ResourceNotFoundException} and returns a 404 Not Found response.
      *
-     * @param ex The {@link ResourceNotFoundException} that was thrown.
+     * @param ex      The {@link ResourceNotFoundException} that was thrown.
      * @param request The {@link HttpServletRequest} that caused the exception.
      * @return A {@link ResponseEntity} containing an {@link ErrorResponse} with HTTP status 404.
      */
@@ -42,7 +43,7 @@ public class GlobalExceptionHandler {
     /**
      * Handles {@link UsernameAlreadyExistsException} and returns a 409 Conflict response.
      *
-     * @param ex The {@link UsernameAlreadyExistsException} that was thrown.
+     * @param ex      The {@link UsernameAlreadyExistsException} that was thrown.
      * @param request The {@link HttpServletRequest} that caused the exception.
      * @return A {@link ResponseEntity} containing an {@link ErrorResponse} with HTTP status 409.
      */
@@ -59,7 +60,7 @@ public class GlobalExceptionHandler {
     /**
      * Handles {@link InsufficientFundsException} and returns a 402 Payment Required response.
      *
-     * @param ex The {@link InsufficientFundsException} that was thrown.
+     * @param ex      The {@link InsufficientFundsException} that was thrown.
      * @param request The {@link HttpServletRequest} that caused the exception.
      * @return A {@link ResponseEntity} containing an {@link ErrorResponse} with HTTP status 402.
      */
@@ -79,7 +80,7 @@ public class GlobalExceptionHandler {
      * and returns a 400 Bad Request response.
      * It collects all field errors and includes them in the error response.
      *
-     * @param ex The {@link MethodArgumentNotValidException} that was thrown.
+     * @param ex      The {@link MethodArgumentNotValidException} that was thrown.
      * @param request The {@link HttpServletRequest} that caused the exception.
      * @return A {@link ResponseEntity} containing an {@link ErrorResponse} with HTTP status 400.
      */
@@ -111,16 +112,21 @@ public class GlobalExceptionHandler {
      * Handles {@link MethodArgumentTypeMismatchException} for type conversion errors
      * and returns a 400 Bad Request response.
      *
-     * @param ex The {@link MethodArgumentTypeMismatchException} that was thrown.
+     * @param ex      The {@link MethodArgumentTypeMismatchException} that was thrown.
      * @param request The {@link HttpServletRequest} that caused the exception.
      * @return A {@link ResponseEntity} containing an {@link ErrorResponse} with HTTP status 400.
      */
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponse> handleTypeMismatch(
             final MethodArgumentTypeMismatchException ex, final HttpServletRequest request) {
+        final String requiredTypeName =
+                Objects.requireNonNullElse(ex.getRequiredType() != null ? ex.getRequiredType().getSimpleName() : null,
+                        "unknown");
+        final String parameterName = Objects.requireNonNullElse(ex.getName(), "unknown");
+
         final String error = String.format("Parameter '%s' must be of type %s",
-                ex.getName(),
-                ex.getRequiredType() != null ? ex.getRequiredType().getSimpleName() : "unknown");
+                parameterName,
+                requiredTypeName);
 
         return buildErrorResponse(
                 ex,
@@ -133,7 +139,7 @@ public class GlobalExceptionHandler {
      * Catches all other uncaught exceptions and returns a 500 Internal Server Error response.
      * This is a generic handler for unexpected errors.
      *
-     * @param ex The {@link Exception} that was thrown.
+     * @param ex      The {@link Exception} that was thrown.
      * @param request The {@link HttpServletRequest} that caused the exception.
      * @return A {@link ResponseEntity} containing an {@link ErrorResponse} with HTTP status 500.
      */
@@ -150,9 +156,9 @@ public class GlobalExceptionHandler {
     /**
      * Helper method to construct a standardized {@link ErrorResponse}.
      *
-     * @param ex The exception that occurred.
-     * @param status The HTTP status to return.
-     * @param path The request URI.
+     * @param ex      The exception that occurred.
+     * @param status  The HTTP status to return.
+     * @param path    The request URI.
      * @param message A descriptive message for the error.
      * @return A {@link ResponseEntity} containing the constructed {@link ErrorResponse}.
      */

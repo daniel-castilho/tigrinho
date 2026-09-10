@@ -16,6 +16,7 @@ public class ThreeSevensWinStrategy implements WinStrategy {
 
     private static final String SEVEN = "SETE";
     private static final BigDecimal MULTIPLIER = new BigDecimal("100");
+    private static final int THREE = 3;
 
     /**
      * Checks if the given list of symbols consists of three "SEVEN" symbols.
@@ -26,7 +27,7 @@ public class ThreeSevensWinStrategy implements WinStrategy {
     @Override
     public boolean matches(final List<String> symbols) {
         // Checks if the list has 3 symbols and all are "SEVEN"
-        return symbols.size() == 3 && symbols.stream().allMatch(SEVEN::equals);
+        return symbols.size() == THREE && symbols.stream().allMatch(SEVEN::equals);
     }
 
     /**

@@ -21,6 +21,13 @@ import java.util.Map;
 @Component
 public class AppHealthIndicator implements HealthIndicator {
 
+    private static final int BYTES_IN_KB = 1024;
+    private static final int MILLIS_IN_SECOND = 1000;
+    private static final int SECONDS_IN_MINUTE = 60;
+    private static final int MINUTES_IN_HOUR = 60;
+    private static final int HOURS_IN_DAY = 24;
+    private static final int EXP_OFFSET = 1; // Used in formatBytes for 'KMiB' prefix array
+
     /**
      * Performs a health check and provides detailed system information.
      *
@@ -40,19 +47,16 @@ public class AppHealthIndicator implements HealthIndicator {
      */
     private Map<String, Object> getSystemInfo() {
         final Map<String, Object> details = new HashMap<>();
-        
         // JVM Information
         final Runtime runtime = Runtime.getRuntime();
         details.put("jvm.name", System.getProperty("java.vm.name"));
         details.put("jvm.version", System.getProperty("java.version"));
         details.put("jvm.vendor", System.getProperty("java.vendor"));
-        
         // Memory Information
         details.put("memory.used", formatBytes(runtime.totalMemory() - runtime.freeMemory()));
         details.put("memory.free", formatBytes(runtime.freeMemory()));
         details.put("memory.total", formatBytes(runtime.totalMemory()));
         details.put("memory.max", formatBytes(runtime.maxMemory()));
-        
         // OS Information
         final OperatingSystemMXBean os = ManagementFactory.getOperatingSystemMXBean();
         details.put("os.name", os.getName());
@@ -60,16 +64,14 @@ public class AppHealthIndicator implements HealthIndicator {
         details.put("os.arch", os.getArch());
         details.put("available.processors", os.getAvailableProcessors());
         details.put("system.load.average", os.getSystemLoadAverage());
-        
         // Uptime
         final RuntimeMXBean rb = ManagementFactory.getRuntimeMXBean();
         details.put("jvm.uptime", formatUptime(rb.getUptime()));
         details.put("jvm.startTime", LocalDateTime.ofInstant(
                 Instant.ofEpochMilli(rb.getStartTime()), ZoneId.systemDefault()));
-        
         return details;
     }
-    
+
     /**
      * Formats a given number of bytes into a human-readable string (e.g., "1.5 MiB").
      *
@@ -77,12 +79,14 @@ public class AppHealthIndicator implements HealthIndicator {
      * @return A formatted string representing the byte size.
      */
     private String formatBytes(final long bytes) {
-        if (bytes < 1024) return bytes + " B";
-        final int exp = (int) (Math.log(bytes) / Math.log(1024));
-        final String pre = "KMGTPE".charAt(exp-1) + "i";
-        return String.format("%.1f %sB", bytes / Math.pow(1024, exp), pre);
+        if (bytes < BYTES_IN_KB) {
+            return bytes + " B";
+        }
+        final int exp = (int) (Math.log(bytes) / Math.log(BYTES_IN_KB));
+        final String pre = "KMGTPE".charAt(exp - EXP_OFFSET) + "i";
+        return String.format("%.1f %sB", (double) bytes / Math.pow(BYTES_IN_KB, exp), pre);
     }
-    
+
     /**
      * Formats a given uptime in milliseconds into a human-readable string
      * (e.g., "1d 2h 3m 4s").
@@ -91,11 +95,12 @@ public class AppHealthIndicator implements HealthIndicator {
      * @return A formatted string representing the uptime.
      */
     private String formatUptime(final long uptime) {
-        final long days = uptime / (1000 * 60 * 60 * 24);
-        final long hours = (uptime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
-        final long minutes = (uptime % (1000 * 60 * 60)) / (1000 * 60);
-        final long seconds = (uptime % (1000 * 60)) / 1000;
-        
+        final long totalSeconds = uptime / MILLIS_IN_SECOND;
+        final long days = totalSeconds / (SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY);
+        final long hours = totalSeconds %
+                (SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY) / (SECONDS_IN_MINUTE * MINUTES_IN_HOUR);
+        final long minutes = totalSeconds % (SECONDS_IN_MINUTE * MINUTES_IN_HOUR) / SECONDS_IN_MINUTE;
+        final long seconds = totalSeconds % SECONDS_IN_MINUTE;
         return String.format("%dd %dh %dm %ds", days, hours, minutes, seconds);
     }
 }

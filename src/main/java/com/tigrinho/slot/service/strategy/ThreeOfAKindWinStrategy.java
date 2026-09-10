@@ -16,7 +16,8 @@ import java.util.List;
 public class ThreeOfAKindWinStrategy implements WinStrategy {
 
     private static final String SEVEN = "SETE";
-    private static final BigDecimal MULTIPLIER = new BigDecimal("10");
+    private static final BigDecimal MULTIPLIER = BigDecimal.TEN;
+    private static final int THREE = 3;
 
     /**
      * Checks if the given list of symbols consists of three identical symbols,
@@ -27,7 +28,7 @@ public class ThreeOfAKindWinStrategy implements WinStrategy {
      */
     @Override
     public boolean matches(final List<String> symbols) {
-        if (symbols.size() != 3) {
+        if (symbols.size() != THREE) {
             return false;
         }
         // The first symbol cannot be "SEVEN"

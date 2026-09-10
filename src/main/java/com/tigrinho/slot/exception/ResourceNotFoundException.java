@@ -6,6 +6,8 @@ package com.tigrinho.slot.exception;
  */
 public class ResourceNotFoundException extends RuntimeException {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Constructs a new ResourceNotFoundException with a detailed message.
      *

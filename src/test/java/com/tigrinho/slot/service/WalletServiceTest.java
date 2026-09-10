@@ -40,8 +40,8 @@ class WalletServiceTest {
     @InjectMocks
     private WalletService walletService;
 
-    private final String playerId = "player1";
-    private final String playerBalanceKey = "balance:player1";
+    private static final String playerId = "player1"; // Made static final
+    private static final String playerBalanceKey = "balance:player1"; // Made static final
 
     /**
      * Sets up the test environment before each test.

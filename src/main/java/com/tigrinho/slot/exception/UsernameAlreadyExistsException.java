@@ -5,6 +5,9 @@ package com.tigrinho.slot.exception;
  * This exception is typically mapped to an HTTP 409 Conflict status.
  */
 public class UsernameAlreadyExistsException extends RuntimeException {
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * Constructs a new UsernameAlreadyExistsException with a message indicating
      * which username already exists.

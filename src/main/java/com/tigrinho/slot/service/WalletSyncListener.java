@@ -1,7 +1,6 @@
 package com.tigrinho.slot.service;
 
 import com.tigrinho.slot.model.dto.event.WalletSyncEvent;
-import com.tigrinho.slot.model.entity.Player;
 import com.tigrinho.slot.repository.PlayerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

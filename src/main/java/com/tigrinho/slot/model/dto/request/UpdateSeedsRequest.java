@@ -12,7 +12,11 @@ import jakarta.validation.constraints.Size;
  */
 public record UpdateSeedsRequest(
         @NotBlank(message = "Client seed cannot be blank")
-        @Size(min = 1, max = 100, message = "Client seed must be between 1 and 100 characters")
+        @Size(min = UpdateSeedsRequest.MIN_CLIENT_SEED_LENGTH,
+                max = UpdateSeedsRequest.MAX_CLIENT_SEED_LENGTH,
+                message = "Client seed must be between 1 and 100 characters")
         String clientSeed
 ) {
+    public static final int MIN_CLIENT_SEED_LENGTH = 1;
+    public static final int MAX_CLIENT_SEED_LENGTH = 100;
 }

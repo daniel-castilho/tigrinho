@@ -4,13 +4,13 @@ import com.tigrinho.slot.exception.ResourceNotFoundException;
 import com.tigrinho.slot.model.entity.Player;
 import com.tigrinho.slot.repository.PlayerRepository;
 import com.tigrinho.slot.service.strategy.WinStrategy;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +21,6 @@ import java.util.Optional;
  */
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class RNGService {
 
     private static final List<String> SYMBOLS = List.of("CEREJA", "LARANJA", "SETE", "BAR");
@@ -29,6 +28,16 @@ public class RNGService {
     private final List<WinStrategy> winStrategies;
     private final CryptoService cryptoService;
     private final PlayerRepository playerRepository;
+
+    // Manual constructor to perform defensive copy for winStrategies
+    public RNGService(final List<WinStrategy> winStrategies,
+                      final CryptoService cryptoService,
+                      final PlayerRepository playerRepository) {
+        // Defensive copy to prevent external modification of the injected list
+        this.winStrategies = Collections.unmodifiableList(new ArrayList<>(winStrategies));
+        this.cryptoService = cryptoService;
+        this.playerRepository = playerRepository;
+    }
 
     /**
      * Generates a deterministic game spin result using the Provably Fair system.
@@ -131,5 +140,11 @@ public class RNGService {
      * @param winAmount The amount won in this spin.
      */
     public record SpinResult(List<String> symbols, BigDecimal winAmount) {
+        // Compact constructor for defensive copying
+        public SpinResult {
+            // Defensive copy for the mutable list to prevent EI_EXPOSE_REP2
+            // And make it unmodifiable to prevent EI_EXPOSE_REP when accessed
+            symbols = Collections.unmodifiableList(new ArrayList<>(symbols));
+        }
     }
 }

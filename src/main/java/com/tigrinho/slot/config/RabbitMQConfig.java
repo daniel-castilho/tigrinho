@@ -58,7 +58,7 @@ public class RabbitMQConfig {
      * @return A {@link Binding} instance.
      */
     @Bean
-    public Binding binding(Queue queue, TopicExchange exchange) {
+    public Binding binding(final Queue queue, final TopicExchange exchange) {
         return BindingBuilder
                 .bind(queue)
                 .to(exchange)

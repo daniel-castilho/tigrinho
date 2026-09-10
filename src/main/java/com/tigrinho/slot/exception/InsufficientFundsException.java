@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  */
 @ResponseStatus(HttpStatus.PAYMENT_REQUIRED) // Maps to HTTP 402
 public class InsufficientFundsException extends RuntimeException {
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * Constructs a new InsufficientFundsException with a message indicating
      * which player has insufficient funds.

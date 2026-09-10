@@ -1,6 +1,8 @@
 package com.tigrinho.slot.model.dto.response;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,4 +18,10 @@ public record SpinResponse(
         BigDecimal winAmount,
         BigDecimal newBalance
 ) {
+    // Compact constructor for defensive copying
+    public SpinResponse {
+        // Defensive copy for the mutable list to prevent EI_EXPOSE_REP2
+        // And make it unmodifiable to prevent EI_EXPOSE_REP when accessed
+        symbols = Collections.unmodifiableList(new ArrayList<>(symbols));
+    }
 }

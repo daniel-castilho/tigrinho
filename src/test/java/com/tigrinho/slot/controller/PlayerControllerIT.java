@@ -9,6 +9,7 @@ import com.tigrinho.slot.repository.PlayerRepository;
 import com.tigrinho.slot.service.PlayerService;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.junit.jupiter.api.BeforeAll; // Changed from BeforeEach
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
-import java.net.URI;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -46,16 +46,21 @@ public class PlayerControllerIT {
     private PlayerService playerService; // Injected for pre-populating data
 
     /**
-     * Sets up the test environment before each test.
-     * Configures RestAssured base URI and port, and clears the database.
+     * Sets up the test environment before all tests.
+     * Configures RestAssured base URI and port.
      */
-    @BeforeEach
-    void setUp() {
+    @BeforeAll // Changed from BeforeEach
+    static void setUpBeforeAll(@LocalServerPort int port) { // Made static and added port parameter
         // Configure RestAssured
         RestAssured.baseURI = "http://localhost";
         RestAssured.port = port;
+    }
 
-        // Clear the database before EACH test to ensure isolation
+    /**
+     * Clears the database before each test to ensure isolation.
+     */
+    @BeforeEach
+    void setUp() {
         playerRepository.deleteAll();
     }
 
